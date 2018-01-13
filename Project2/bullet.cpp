@@ -1,4 +1,5 @@
 #include<bullet.h>
+#include<QDebug>
 
 bullet::bullet()
 {
@@ -13,4 +14,9 @@ void bullet::move()
 {
     //Move the Bullet up
     setPos(x(),y()-10);
+    if(pos().y() < 110)
+    {
+        scene()->removeItem(this);
+        delete this;
+    }
 }

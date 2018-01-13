@@ -2,15 +2,21 @@
 #include<bullet.h>
 #include<QGraphicsScene>
 #include <QDebug>
+#include "enemybullet.h"
 void myrect::keyPressEvent(QKeyEvent *event)
 {
     if(event->key()==Qt::Key_Left)
     {
-        setPos(x()-10,y());
+        if((pos().x())>-50)
+            setPos(x()-10,y());
     }
     else if(event->key()==Qt::Key_Right)
     {
-        setPos(x()+10,y());
+
+        if((pos().x())<750)
+            setPos(x()+10,y());
+
+
     }
     else if(event->key() == Qt::Key_Space)
     {
@@ -19,4 +25,12 @@ void myrect::keyPressEvent(QKeyEvent *event)
         scene()->addItem(mybullet);
 
     }
+}
+
+void myrect::spawn()
+{
+    enemyBullet *ebullet;
+    ebullet =new enemyBullet();
+    scene()->addItem(ebullet);
+
 }

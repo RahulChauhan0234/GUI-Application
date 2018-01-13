@@ -1,6 +1,7 @@
 #ifndef BULLET_H
 #define BULLET_H
 #include<QGraphicsRectItem>
+#include<QGraphicsScene>
 #include <QObject>
 #include <QTimer>
 
