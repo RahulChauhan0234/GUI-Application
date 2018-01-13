@@ -15,6 +15,7 @@ void myrect::keyPressEvent(QKeyEvent *event)
     else if(event->key() == Qt::Key_Space)
     {
         bullet *mybullet =new bullet();
+        mybullet->setPos(x(),y());
         scene()->addItem(mybullet);
 
     }

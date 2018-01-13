@@ -21,6 +21,11 @@ int main(int argc, char *argv[])
     scene->addItem(rect);
 
     QGraphicsView *view = new QGraphicsView(scene);
+    //dirty solution because if we pressing space button bullet is
+    //generating and moving upward and sceen is making bigger and bigger
+    // to avoid this remove the scrollbar
+    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
     view->show();
     return a.exec();
 }
